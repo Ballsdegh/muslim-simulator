@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background-color: #03130d;
+  color: #efe9da;
+  font-family: Manrope, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  font-family: inherit;
+}
+
+input {
+  font-family: inherit;
+}
+
+::selection {
+  background: rgba(201, 162, 75, 0.4);
+}
+
+@layer utilities {
+  .app-bg {
+    background:
+      radial-gradient(1200px 800px at 85% -10%, rgba(22, 105, 82, 0.35), transparent 60%),
+      radial-gradient(900px 700px at -10% 30%, rgba(10, 64, 48, 0.5), transparent 60%),
+      radial-gradient(1000px 900px at 50% 110%, rgba(201, 162, 75, 0.08), transparent 55%),
+      linear-gradient(175deg, #051c14 0%, #03130d 55%, #04160f 100%);
+  }
+
+  .gold-text {
+    background: linear-gradient(100deg, #f5ebcd 0%, #ddbc6b 45%, #c9a24b 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  .glass {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.065), rgba(255, 255, 255, 0.028));
+    border: 1px solid rgba(255, 255, 255, 0.09);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+  }
+
+  .glass-locked {
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.015));
+    border: 1px solid rgba(255, 255, 255, 0.07);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+
+  .cream-card {
+    background:
+      radial-gradient(140% 120% at 50% 0%, rgba(201, 162, 75, 0.1), transparent 50%),
+      linear-gradient(165deg, #f7f1e2 0%, #efe5cd 100%);
+    color: #0b251c;
+  }
+
+  .shimmer-line {
+    background: linear-gradient(
+      90deg,
+      rgba(221, 188, 107, 0) 0%,
+      rgba(221, 188, 107, 0.55) 50%,
+      rgba(221, 188, 107, 0) 100%
+    );
+    background-size: 200% 100%;
+    animation: shimmer 2.2s linear infinite;
+  }
+
+  .press {
+    transition:
+      transform 0.16s cubic-bezier(0.34, 1.56, 0.64, 1),
+      box-shadow 0.2s ease,
+      background-color 0.2s ease,
+      border-color 0.2s ease,
+      opacity 0.2s ease;
+  }
+  .press:active {
+    transform: scale(0.955);
+  }
+
+  .pb-safe {
+    padding-bottom: max(env(safe-area-inset-bottom), 0px);
+  }
+
+  .scrollbar-thin {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(221, 188, 107, 0.35) transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    background: rgba(221, 188, 107, 0.3);
+    border-radius: 999px;
+  }
+
+  .arabic {
+    font-family: Amiri, 'Scheherazade New', serif;
+  }
+
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
